@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("./img/stars-1654074_1280.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+.container {
+	font-size: 10px;
+	width: 40em;
+	height: 40em;
+	position: relative;
+}
+.sun {
+	position: absolute;
+	top: 15em;
+	left: 15em;
+	width: 12em;
+	height: 12em;
+    background-image: url("./img/sun-11582_1280.jpg");
+	background-size: 133%;
+	background-position: center;
+	border-radius: 50%;
+	box-shadow: 0 0 10em white;
+}
+.earth,
+.moon {
+	position: absolute;
+	border-style: solid;
+	border-color: transparent transparent transparent;
+	border-width: 0.1em 0.1em 0;
+	border-radius: 50%;
+}
+.earth {
+	top: -9em;
+	left: -8em;
+	width: 60em;
+	height: 60em;
+	animation: orbit 30s linear infinite;
+}
+.moon {
+	top: 0;
+	right: 0;
+	width: 15em;
+	height: 14em;
+	animation: orbit 5.7s linear infinite;
+}
+.earth::before,
+.moon::before,
+.mercury::before,
+.venus::before,
+.mars::before {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+.earth::before {
+	top: 2.8em;
+	right: 2.8em;
+	width: 8em;
+	height: 8em;
+	background-image: url("./img/earth-11015_1280.jpg");
+	background-size: 123%;
+	background-position: center;
+}
+.moon::before {
+	top: 1.8em;
+	right: 0.2em;
+    width: 3em;
+    height: 3em;
+	background-image: url("./img/full-moon-1869760_1280.jpg");
+	background-size: 170%;
+	background-position: center;
+}
+.mercury::before {
+	top: 16em;
+	right: 32em;
+	width: 3em;
+	height: 3em;
+    background-image: url("./img/images.jpg");
+	background-size: 112%;
+	background-position: center;
+}
+.venus::before {
+	top: 44em;
+	right: 16em;
+	width: 4em;
+	height: 4em;
+    background-image: url("./img/venus-11022_1280.jpg");
+	background-size: 112%;
+	background-position: center;
+}
+.mars::before {
+	bottom: 20em;
+	right: 65em;
+	width: 6em;
+	height: 6em;
+    background-image: url("./img/mars-11012_1280.jpg");
+	background-size: 103%;
+	background-position: center;
+}
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+}
